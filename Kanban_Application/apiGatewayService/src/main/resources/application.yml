@@ -1,0 +1,65 @@
+#server:
+#  port: 8089
+#spring:
+#  application:
+#    name: Api-Gateway-Service
+#  main:
+#    web-application-type: reactive
+#  cloud:
+#    gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:4200"
+#            allowedHeaders: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PATCH
+#              - PUT
+#              - DELETE
+
+#
+#server:
+#  port: 8089
+#
+#spring:
+#  application:
+#    name: Api-Gateway-Service
+#  main:
+#    web-application-type: reactive
+#  cloud:
+#    gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:4200"
+#            allowedHeaders: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PATCH
+#              - PUT
+#              - DELETE
+
+
+server:
+  port: 8089
+
+spring:
+  application:
+    name: ApiGateWayApp
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
