@@ -1,0 +1,21 @@
+<div style="min-height:88vh;">
+    <div cdkDropListGroup style="display: flex;overflow-x: auto;">
+        <div class="example-container" *ngFor="let item of getCurrentProject().columnList" style="min-height: 80vh;background-color:wheat;">
+            <h2 style="text-align: center;">{{item.columnName}}</h2>
+            
+            <div cdkDropList [cdkDropListData]="item" class="example-list" (cdkDropListDropped)="drop($event)" style="background-color:wheat;border:none;">
+        
+                <mat-card class="example-box" *ngFor="let task of item.taskList" cdkDrag style="width: 280px;border-radius:5px;background-color: white;margin-left:25px;">
+                    <mat-card-content><div>{{task.taskName}}</div>
+                        <div><mat-icon></mat-icon>{{task.deadLine}}</div>
+                     </mat-card-content>
+                 </mat-card>     
+        </div>
+
+        <!-- <div style="border-radius:40%;background-color:pink;width: fit-content;padding:15px;text-align: center;">
+            <mat-icon style="font-size:30px;">add</mat-icon>
+        </div> -->
+    </div>
+</div>
+    
+                                     

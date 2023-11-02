@@ -1,0 +1,58 @@
+  <div style="background-image: url(assets/trianglify-lowres3.png);">
+    <mat-toolbar style="background-color:navy;">
+      <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon class="text-white">menu</mat-icon>
+        </button>
+        <h1 class="text-white">Kanban</h1>
+        <div style="margin-left: 900px;">
+        <mat-icon class="navIcon">add_circle_outline</mat-icon>
+        <mat-icon class="navIcon">done</mat-icon>
+        <mat-icon class="navIcon">notifications_active</mat-icon>
+        <mat-icon class="navIcon">people</mat-icon>
+        <mat-icon class="navIcon">search</mat-icon>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div style="display: flex;">
+    <!-- background-color: antiquewhite; -->
+<mat-sidenav-container style="opacity: 85%;margin-right: 10px;">
+  <mat-sidenav #sidenav opened="true" mode="side" style="background-color: #DDD3AF;">
+        <mat-nav-list style="min-width:23vw;">
+          <a mat-list-item >
+            <mat-icon class="navIcon" style="margin-right: 20px;margin-left: 10px;">home</mat-icon>
+            <h1 style="margin-top:20px;">Dashboard</h1></a>
+            <br>
+            <!-- -------------------------------------------------------------------- -->
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+                       <mat-expansion-panel-header>
+      <mat-panel-title >
+        <mat-icon class="navIcon" style="margin-right: 20px;margin-top:20px;margin-left: 0px;">queue</mat-icon>
+        <a><h1 style="margin-top:20px;">Projects</h1></a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+<mat-nav-list  *ngFor="let item of pList">
+    <a mat-list-item>{{item.projectName}}</a>
+</mat-nav-list>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<!-- -------------------------------------------------------------------- -->
+</mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content style="height: 92vh;">
+      
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+<div style="min-height:92vh;min-width:80vw;overflow-x: auto;">
+  <app-dashboard ></app-dashboard>
+    <!-- <app-project-page></app-project-page> -->
+</div>
+
+</div>
+</div>
